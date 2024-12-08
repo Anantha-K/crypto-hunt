@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export const GET = async (req) => {
   try {
     await connect();
-    const users = await User.find().sort({ score: -1, timeTaken: 1 });
+    const users = await User.find().sort({ completeTime: 1 });
     if (!users || users.length === 0) {
       return NextResponse.json({ message: "No users found" }, { status: 404 });
     }
@@ -36,6 +36,5 @@ export const GET = async (req) => {
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
 };
-
 
 
