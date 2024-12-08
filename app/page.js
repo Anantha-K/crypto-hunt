@@ -71,8 +71,17 @@ function Page() {
       toast.error("Incorrect Password");
     }
     else if(response.message === "Login Successful"){
+
       toast.success("Logged in")
       localStorage.setItem('token',response.token);
+      if (response.firstLogin) {
+        setTimeout(() => {
+          toast.loading('Redirecting...', {
+            position: "top-left"
+          });
+          window.location.href = '/hunt/cipher';
+        }, 5000);
+      }else{
       setTimeout(()=>{
         toast.loading('Redirecting...', {
           position: "top-left"
@@ -80,12 +89,13 @@ function Page() {
         redirect('/hunt/game');
 
       },500);
-
+    
       setTimeout(()=>{
           window.location.href='/hunt/game';
         },1000);
 
       }
+    }
       setEmail('')
       setPassword('')
     
