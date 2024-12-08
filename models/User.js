@@ -3,6 +3,14 @@ const { Schema } = mongoose;
 
 const defaultCompleteTime = new Date("2024-09-04T00:00:00Z");
 
+const calculateDefaultCompleteTime = () => {
+  const currentDate = new Date();
+  const futureDate = new Date(currentDate);
+  futureDate.setDate(currentDate.getDate() + 5);
+  return futureDate;
+};
+
+
 const UserSchema = new mongoose.Schema(
   {
     name: {
@@ -35,7 +43,7 @@ const UserSchema = new mongoose.Schema(
     scoreTimestamp: { type: Date, default: Date.now },
     firstLogin: { type: Boolean, default: true },
     startTime: { type: Date },
-    completeTime: { type: Date, default: defaultCompleteTime },
+    completeTime: { type: Date, default: calculateDefaultCompleteTime  },
     violated: { type: Boolean, default: false },
     logoutCount: { type: Number, default: 0 }, // Added field to track logouts
     timeTaken: {
