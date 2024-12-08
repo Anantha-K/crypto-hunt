@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api/auth/Fetchleader",
+        "headers": {
+          "cache-control": "s-maxage=0, no-cache, no-store, must-revalidate"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,143 @@
+/* leaderboard.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #0feb79, #06454a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .top-three {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .first-place {
+    order: 2;
+    height: 200px;
+  }
+  
+  .second-place {
+    order: 1;
+    height: 180px;
+  }
+  
+  .third-place {
+    order: 3;
+    height: 160px;
+  }
+  
+  .medal {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .points {
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+  
+  .leaderboard-list {
+    background-color: rgba(4, 43, 10, 0.383);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .leaderboard-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .rank {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .name {
+    flex-grow: 1;
+  }
+  
+  .score {
+    font-weight: bold;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    background: rgba(19, 19, 19, 0.4);
+    font-size: 0.9em;
+  }
+  
+  .copyright {
+    margin-bottom: 10px;
+  }
+  
+  .credits a {
+    color: #0feb79;
+    text-decoration: none;
+  }
+  
+  .credits a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .top-three {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      margin-bottom: 20px;
+      width: 80%;
+    }
+  
+    .first-place, .second-place, .third-place {
+      height: auto;
+      order: initial;
+    }
+  }
