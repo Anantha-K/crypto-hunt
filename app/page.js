@@ -80,7 +80,7 @@ function Page() {
             position: "top-left"
           });
           window.location.href = '/hunt/cipher';
-        }, 5000);
+        }, 1000);
       }else{
       setTimeout(()=>{
         toast.loading('Redirecting...', {
